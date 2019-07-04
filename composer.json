@@ -1,0 +1,54 @@
+{
+    "name": "saulo-silva/teste-package",
+    "description": "",
+    "keywords": [
+        "saulo-silva",
+        "teste-package"
+    ],
+    "homepage": "https://github.com/saulo-silva/teste-package",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Saulo Silva",
+            "email": "saulo@s10design.com.br",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SauloSilva\\TestePackage\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SauloSilva\\TestePackage\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SauloSilva\\TestePackage\\TestePackageServiceProvider"
+            ],
+            "aliases": {
+                "TestePackage": "SauloSilva\\TestePackage\\TestePackageFacade"
+            }
+        }
+    }
+}
